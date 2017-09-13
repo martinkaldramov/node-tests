@@ -13,3 +13,17 @@ it('should square a number', () => {
 
   expect(res).toBe(16).toBeA('number');
 });
+
+it('should verify first and last names are set', () => {
+  var user = utils.setName({
+    location: 'Sofia, Bulgaria',
+    job: 'Tech Support'
+  }, 'Martin Kaldramov');
+
+  expect(user)
+    .toBeA('object')
+    .toInclude({
+      firstName: 'Martin',
+      lastName: 'Kaldramov'
+  });
+});
